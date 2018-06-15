@@ -7,6 +7,9 @@
 #include <vector>
 #include <string>
 
+//PT -- two minor compiler errors, but once fixed, it worked fine.
+// 92/100
+
 namespace Exam1{
 
 	/// Wheel class is first so that all later Wheel objects can be identified.
@@ -19,11 +22,17 @@ namespace Exam1{
 	};
 // STEP 1: Complete the implementation of the Vehicle base class 
 	// as described in the UML diagram
+	
+	//PT -- it's much better to separate these different classes into their own files. If another develpoer
+	//      wants to use your code, they can take only the files they need, rather than all of the vehicles.
+	//  -3
 	class Vehicle
 	{
 	protected:
 		std::string _color;
 		int _topspeed;
+		//PT -- wheels shouldn't have (). It's a variable, not a function.
+		// -5
 		std::vector<Wheel> wheels();
 
 	public:
@@ -39,6 +48,8 @@ namespace Exam1{
 			_topspeed = 0;
 		}
 		virtual std::string Description() = 0;
+		//PT -- extra }
+		// -3
 		};
 
 	};
